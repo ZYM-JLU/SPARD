@@ -1,0 +1,44 @@
+dataset: 'h36m'
+t_his: 25
+t_pred: 100
+batch_size: 64
+start_epoch: 1
+num_epoch: 1001
+lr: 1.e-4
+gamma: 0.9
+padding: 'LastFrame'
+augmentation: 5
+stride: 10
+rota_prob: 1
+multimodal_threshold: 0.5
+
+# diffusion parameters
+scheduler: 'exponential'
+noise_steps: 5
+sample_steps: 5
+etas_min: 0.04
+etas_max: 0.99
+kappa: 4.0
+power: 0.3
+objective: 'x0'
+loss: 'mae'
+
+# model parameters
+n_pre: 20
+refine_n_pre: 125
+num_layers: 8
+num_heads: 8
+latent_dims: 512
+dropout: 0.2
+mod_train: 0.5
+mod_test: 0.3
+save_model_interval: 100
+metrics_epoch: 50
+ckpt: ""
+div_k: 5
+sample: 'ddim'
+
+# refine_model parameters
+gcn_linear_size: 256
+gcn_dropout: 0.5
+gcn_layers: 6
